@@ -71,7 +71,7 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="block gradient-text"
           >
-            Israel R.
+            Israel R
           </motion.span>
         </h1>
 
