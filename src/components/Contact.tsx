@@ -13,14 +13,61 @@ const socials = [
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const triggerMailtoFallback = () => {
+    const subject = encodeURIComponent(`Portfolio Message from ${form.name}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+    window.location.href = `mailto:jockinisrael@gmail.com?subject=${subject}&body=${body}`;
     setSent(true);
     setTimeout(() => {
       setSent(false);
       setForm({ name: "", email: "", message: "" });
     }, 3000);
+  };
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    
+    // To enable silent background email sending, get a free access key from https://web3forms.com
+    // and replace "YOUR_ACCESS_KEY_HERE" below. Otherwise, it will fallback to mailto.
+    const accessKey = "YOUR_ACCESS_KEY_HERE"; 
+    
+    if (accessKey && accessKey !== "YOUR_ACCESS_KEY_HERE") {
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name: form.name,
+            email: form.email,
+            message: form.message,
+          }),
+        });
+        const result = await response.json();
+        if (result.success) {
+          setSent(true);
+          setTimeout(() => {
+            setSent(false);
+            setForm({ name: "", email: "", message: "" });
+          }, 3000);
+        } else {
+          triggerMailtoFallback();
+        }
+      } catch (error) {
+        triggerMailtoFallback();
+      } finally {
+        setSubmitting(false);
+      }
+    } else {
+      triggerMailtoFallback();
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -49,6 +96,10 @@ export function Contact() {
                   <MapPin size={14} className="text-cyan-300" /> Tamil Nadu, India
                 </div>
                 <div className="flex items-center gap-2">
+                  <Mail size={14} className="text-cyan-300" />
+                  <a href="mailto:jockinisrael@gmail.com" className="hover:text-cyan-300 transition-colors font-mono">jockinisrael@gmail.com</a>
+                </div>
+                <div className="flex items-center gap-2">
                   <Phone size={14} className="text-cyan-300" />
                   <a href="tel:7010342521" className="hover:text-cyan-300 transition-colors font-mono">+91 7010342521</a>
                 </div>
@@ -62,6 +113,8 @@ export function Contact() {
                   <a
                     key={s.label}
                     href={s.href}
+                    target={s.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={s.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                     className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg glass border border-white/10 text-gray-300 hover:border-cyan-400/50 hover:text-white transition-colors"
                     data-hover
                   >
@@ -122,10 +175,10 @@ export function Contact() {
             </div>
             <button
               type="submit"
-              disabled={sent}
-              className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold bg-gradient-to-r from-cyan-400 to-violet-500 text-black disabled:opacity-70"
+              disabled={sent || submitting}
+              className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold bg-gradient-to-r from-cyan-400 to-violet-500 text-black disabled:opacity-70 cursor-pointer"
             >
-              {sent ? <><CheckCircle2 size={15} /> Sent!</> : <><Send size={15} /> Send Message</>}
+              {submitting ? "Sending..." : sent ? <><CheckCircle2 size={15} /> Sent!</> : <><Send size={15} /> Send Message</>}
             </button>
           </motion.form>
         </div>
