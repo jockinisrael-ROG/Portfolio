@@ -81,48 +81,6 @@ const projects = [
     demo: ""
   },
   {
-    num: "03",
-    title: "Unity AI Companion",
-    category: "Unity | Artificial Intelligence",
-    tags: ["Unity", "AI", "Computer Vision"],
-    desc: "An interactive AI companion built in Unity featuring a VRM avatar with facial expressions, lip sync, voice interaction, emotion system, and real-time face tracking.",
-    features: [
-      "VRM Avatar",
-      "Lip Sync",
-      "Emotion System",
-      "Face Tracking",
-      "Voice Interaction",
-      "Desktop Assistant",
-      "Interactive Animations"
-    ],
-    tech: ["Unity", "C#", "VRM", "OpenCV", "Python"],
-    gradient: "from-purple-500/20 via-pink-500/10 to-rose-500/20",
-    glow: "rgba(236, 72, 153, 0.4)",
-    icon: Gamepad2,
-    github: "https://github.com/jockinisrael-ROG/uni-glow-zenith",
-    demo: ""
-  },
-  {
-    num: "05",
-    title: "Snake Detection & Monitoring System",
-    category: "Computer Vision",
-    tags: ["Computer Vision", "Machine Learning"],
-    desc: "A real-time snake detection system capable of identifying snakes from CCTV or live camera feeds using deep learning object detection models.",
-    features: [
-      "Live Detection",
-      "YOLO Object Detection",
-      "CCTV Monitoring",
-      "Smart Alert System",
-      "Real-Time Processing"
-    ],
-    tech: ["Python", "OpenCV", "YOLO"],
-    gradient: "from-emerald-500/20 via-teal-500/10 to-cyan-500/20",
-    glow: "rgba(16, 185, 129, 0.4)",
-    icon: Eye,
-    github: "https://github.com/jockinisrael-ROG/yuki",
-    demo: ""
-  },
-  {
     num: "06",
     title: "PDF Intelligence System",
     category: "Artificial Intelligence",
