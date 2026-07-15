@@ -13,7 +13,8 @@ import {
   ExternalLink,
   Filter,
   Sparkles,
-  ChevronDown
+  ChevronDown,
+  Heart
 } from "lucide-react";
 
 function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -81,7 +82,7 @@ const projects = [
     demo: ""
   },
   {
-    num: "06",
+    num: "03",
     title: "PDF Intelligence System",
     category: "Artificial Intelligence",
     tags: ["AI", "NLP"],
@@ -101,7 +102,7 @@ const projects = [
     demo: ""
   },
   {
-    num: "07",
+    num: "04",
     title: "AI Voice Pipeline",
     category: "Speech AI",
     tags: ["AI", "NLP"],
@@ -121,7 +122,7 @@ const projects = [
     demo: ""
   },
   {
-    num: "08",
+    num: "05",
     title: "Smart Voting & Attendance System",
     category: "Computer Vision | Artificial Intelligence",
     tags: ["AI", "Computer Vision", "Python"],
@@ -136,8 +137,68 @@ const projects = [
     tech: ["Python", "OpenCV", "Face-Recognition", "SQLite", "FastAPI"],
     gradient: "from-red-500/20 via-orange-500/10 to-amber-500/20",
     glow: "rgba(239, 68, 68, 0.4)",
-    icon: Cpu,
+    icon: Eye,
     github: "https://github.com/jockinisrael-ROG/smart-voting-and-attendance-system",
+    demo: ""
+  },
+  {
+    num: "06",
+    title: "Project EVA",
+    category: "Artificial Intelligence | Computer Vision",
+    tags: ["AI", "Computer Vision", "Python"],
+    desc: "An advanced AI vision and object detection assistant designed to analyze real-time environments and interact dynamically with surrounding systems.",
+    features: [
+      "Real-Time Object Detection",
+      "Environment Scanning",
+      "Interactive Alerts",
+      "Multi-Object Tracking",
+      "Deep Learning Inference"
+    ],
+    tech: ["Python", "OpenCV", "YOLOv8", "PyTorch", "CUDA"],
+    gradient: "from-emerald-500/20 via-teal-500/10 to-cyan-500/20",
+    glow: "rgba(16, 185, 129, 0.4)",
+    icon: Bot,
+    github: "https://github.com/georgecpwajeff-stack/PROJECT-EVA",
+    demo: ""
+  },
+  {
+    num: "07",
+    title: "Project Beta",
+    category: "Full Stack Development | Team Collaboration",
+    tags: ["Full Stack", "JavaScript", "React"],
+    desc: "A collaborative full-stack web application designed for agile team workflows, task tracking, and seamless synchronization of engineering milestones.",
+    features: [
+      "Agile Task Board",
+      "Team Workspace",
+      "Milestone Tracking",
+      "Real-time Collaboration",
+      "Developer Dashboard"
+    ],
+    tech: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "TailwindCSS"],
+    gradient: "from-purple-500/20 via-pink-500/10 to-rose-500/20",
+    glow: "rgba(236, 72, 153, 0.4)",
+    icon: Cpu,
+    github: "https://github.com/georgecpwajeff-stack/Beta",
+    demo: ""
+  },
+  {
+    num: "08",
+    title: "Blood Bank Management",
+    category: "Full Stack Development | Database",
+    tags: ["Full Stack", "TypeScript", "Database"],
+    desc: "A comprehensive blood donation platform featuring donor registration, search and request matchmakers, inventory management, and automated alerts.",
+    features: [
+      "Donor Registration & Matching",
+      "Live Blood Requests Tracker",
+      "Inventory Management",
+      "Automated Email Alerts",
+      "Admin Control Panel"
+    ],
+    tech: ["TypeScript", "React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
+    gradient: "from-rose-500/20 via-red-500/10 to-orange-500/20",
+    glow: "rgba(244, 63, 94, 0.4)",
+    icon: Heart,
+    github: "https://github.com/jockinisrael-ROG/Blood-Bank-Management",
     demo: ""
   }
 ];

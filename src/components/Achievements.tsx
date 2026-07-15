@@ -2,12 +2,12 @@ import { SectionTitle, Counter } from "./ui";
 import { Trophy } from "lucide-react";
 
 const stats = [
-  { target: 5, label: "Projects", suffix: "+" },
-  { target: 5, label: "AI Apps", suffix: "+" },
+  { target: 8, label: "Projects", suffix: "+" },
+  { target: 6, label: "AI Apps", suffix: "+" },
   { target: 1, label: "Unity Apps", suffix: "+" },
-  { target: 7, label: "Repos", suffix: "+" },
-  { target: 1, label: "ML Models", suffix: "+" },
-  { target: 1, label: "CV Projects", suffix: "+" },
+  { target: 8, label: "Repos", suffix: "+" },
+  { target: 2, label: "ML Models", suffix: "+" },
+  { target: 2, label: "CV Projects", suffix: "+" },
   { target: 42, label: "Technologies", suffix: "+" },
   { target: 64, label: "Contributions", suffix: "+" },
 ];

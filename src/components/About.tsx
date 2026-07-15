@@ -83,7 +83,7 @@ export function About() {
             ))}
 
             <div className="grid grid-cols-2 gap-3 mt-6">
-              <Counter target={5} suffix="+" label="Projects" />
+              <Counter target={8} suffix="+" label="Projects" />
               <Counter target={42} suffix="+" label="Technologies" />
             </div>
           </motion.div>
