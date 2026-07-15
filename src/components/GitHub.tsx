@@ -8,8 +8,11 @@ const repos = [
 ];
 
 const topLangs = [
-  { name: "Python", pct: 70, color: "#3572A5" },
-  { name: "TypeScript", pct: 30, color: "#2b7489" },
+  { name: "Python", pct: 45, color: "#3572A5" },
+  { name: "TypeScript", pct: 20, color: "#2b7489" },
+  { name: "Java", pct: 15, color: "#b07219" },
+  { name: "C#", pct: 12, color: "#178600" },
+  { name: "C", pct: 8, color: "#555555" },
 ];
 
 function Heatmap() {

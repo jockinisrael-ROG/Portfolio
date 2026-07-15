@@ -55,8 +55,8 @@ const projects = [
     gradient: "from-cyan-500/20 via-blue-500/10 to-violet-500/20",
     glow: "rgba(34, 211, 238, 0.4)",
     icon: GraduationCap,
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/jockinisrael-ROG/Tutor-RBT",
+    demo: ""
   },
   {
     num: "02",
@@ -77,8 +77,8 @@ const projects = [
     gradient: "from-violet-500/20 via-indigo-500/10 to-purple-500/20",
     glow: "rgba(139, 92, 246, 0.4)",
     icon: Bot,
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/jockinisrael-ROG/Personal-LLM",
+    demo: ""
   },
   {
     num: "03",
@@ -99,8 +99,8 @@ const projects = [
     gradient: "from-purple-500/20 via-pink-500/10 to-rose-500/20",
     glow: "rgba(236, 72, 153, 0.4)",
     icon: Gamepad2,
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/jockinisrael-ROG/uni-glow-zenith",
+    demo: ""
   },
   {
     num: "05",
@@ -119,8 +119,8 @@ const projects = [
     gradient: "from-emerald-500/20 via-teal-500/10 to-cyan-500/20",
     glow: "rgba(16, 185, 129, 0.4)",
     icon: Eye,
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/jockinisrael-ROG/yuki",
+    demo: ""
   },
   {
     num: "06",
@@ -139,8 +139,8 @@ const projects = [
     gradient: "from-amber-500/20 via-orange-500/10 to-yellow-500/20",
     glow: "rgba(245, 158, 11, 0.4)",
     icon: FileText,
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/jockinisrael-ROG/Truth-Lens",
+    demo: ""
   },
   {
     num: "07",
@@ -159,28 +159,28 @@ const projects = [
     gradient: "from-blue-500/20 via-sky-500/10 to-indigo-500/20",
     glow: "rgba(59, 130, 246, 0.4)",
     icon: Mic,
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/jockinisrael-ROG/simple-ai-chat",
+    demo: ""
   },
   {
     num: "08",
-    title: "IoT Smart Automation System",
-    category: "Internet of Things (IoT)",
-    tags: ["IoT"],
-    desc: "An IoT automation project integrating multiple sensors for smart environmental monitoring and intelligent automation.",
+    title: "Smart Voting & Attendance System",
+    category: "Computer Vision | Artificial Intelligence",
+    tags: ["AI", "Computer Vision", "Python"],
+    desc: "A smart voting and automated attendance monitoring platform integrating face recognition algorithms for secure verification.",
     features: [
-      "Temperature Monitoring",
-      "Humidity Monitoring",
-      "Gas Detection",
-      "Distance Measurement",
-      "Smart Automation"
+      "Face Recognition",
+      "Automated Attendance",
+      "Secure Voting Gateways",
+      "Real-Time Processing",
+      "User Authentication"
     ],
-    tech: ["Arduino", "C++", "DHT11", "Ultrasonic Sensor", "MQ Gas Sensor", "LCD Display"],
+    tech: ["Python", "OpenCV", "Face-Recognition", "SQLite", "FastAPI"],
     gradient: "from-red-500/20 via-orange-500/10 to-amber-500/20",
     glow: "rgba(239, 68, 68, 0.4)",
     icon: Cpu,
-    github: "https://github.com",
-    demo: "https://demo.com"
+    github: "https://github.com/jockinisrael-ROG/smart-voting-and-attendance-system",
+    demo: ""
   }
 ];
 
@@ -369,27 +369,17 @@ function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
+          <div className="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto w-full">
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold font-mono border border-white/10 bg-white/5 text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold font-mono relative overflow-hidden group/github text-black bg-cyan-400 hover:bg-cyan-300 transition-all duration-300 cursor-pointer shadow-[0_0_12px_rgba(34,211,238,0.2)] hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
               onClick={(e) => e.stopPropagation()}
             >
-              <GithubIcon className="w-4 h-4" />
-              <span>GITHUB</span>
-            </a>
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold font-mono relative overflow-hidden group/demo text-black bg-cyan-400 hover:bg-cyan-300 transition-all duration-300 cursor-pointer shadow-[0_0_12px_rgba(34,211,238,0.2)] hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/demo:animate-[shimmer_1.5s_infinite] pointer-events-none" />
-              <ExternalLink className="w-4 h-4 text-black" />
-              <span>LIVE DEMO</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover/github:animate-[shimmer_1.5s_infinite] pointer-events-none" />
+              <GithubIcon className="w-4 h-4 text-black" />
+              <span>VIEW REPOSITORY</span>
             </a>
           </div>
         </div>
