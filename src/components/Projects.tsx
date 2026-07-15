@@ -438,7 +438,7 @@ export function Projects() {
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl glow-spot" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <SectionTitle tag="04 · Projects" title="Featured" accent="Work" />
+        <SectionTitle tag="05 · Projects" title="Featured" accent="Work" />
 
         {/* Search & Filters Controller */}
         <div className="flex flex-col gap-6 mb-12 max-w-3xl mx-auto">

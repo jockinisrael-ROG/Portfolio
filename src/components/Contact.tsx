@@ -73,7 +73,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <SectionTitle tag="07 · Contact" title="Get In" accent="Touch" />
+        <SectionTitle tag="08 · Contact" title="Get In" accent="Touch" />
 
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Left */}

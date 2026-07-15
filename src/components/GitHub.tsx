@@ -46,7 +46,7 @@ export function GitHub() {
   return (
     <section id="github" className="relative py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle tag="05 · GitHub" title="Open" accent="Source" />
+        <SectionTitle tag="06 · GitHub" title="Open" accent="Source" />
 
         <div className="grid lg:grid-cols-3 gap-5">
           {/* Stats + Heatmap */}

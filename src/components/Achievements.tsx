@@ -16,7 +16,7 @@ export function Achievements() {
   return (
     <section className="relative py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionTitle tag="06 · Milestones" title="In" accent="Numbers" />
+        <SectionTitle tag="07 · Milestones" title="In" accent="Numbers" />
 
         <div className="flex justify-center mb-10">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-pink-500 flex items-center justify-center shadow-[0_0_30px_rgba(251,146,60,0.3)]">

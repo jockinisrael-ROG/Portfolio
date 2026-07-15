@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Experience } from "./components/Experience";
+import { Internships } from "./components/Internships";
 import { Projects } from "./components/Projects";
 import { GitHub } from "./components/GitHub";
 import { Achievements } from "./components/Achievements";
@@ -70,6 +71,7 @@ export default function App() {
         <SectionReveal><About /></SectionReveal>
         <SectionReveal><Skills /></SectionReveal>
         <SectionReveal><Experience /></SectionReveal>
+        <SectionReveal><Internships /></SectionReveal>
         <SectionReveal><Projects /></SectionReveal>
         <SectionReveal><GitHub /></SectionReveal>
         <SectionReveal><Achievements /></SectionReveal>
