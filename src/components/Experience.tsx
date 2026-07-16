@@ -56,22 +56,23 @@ export function Experience() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="experience" ref={sectionRef} className="relative py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="experience" ref={sectionRef} className="relative py-12 md:py-16 px-6">
+      <div className="max-w-6xl mx-auto">
         <SectionTitle tag="03 · Experience" title="Professional" accent="Journey" />
 
-        <div className="relative mt-12">
+        {/* Mobile Vertical Timeline */}
+        <div className="relative mt-12 md:hidden">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-white/10" />
+          <div className="absolute left-4 top-0 bottom-0 w-px -translate-x-1/2 bg-white/10" />
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-4 md:left-1/2 top-0 w-px -translate-x-1/2 bg-gradient-to-b from-cyan-400 via-violet-500 to-pink-500"
+            className="absolute left-4 top-0 w-px -translate-x-1/2 bg-gradient-to-b from-cyan-400 via-violet-500 to-pink-500"
           />
 
           {experiences.map((exp, i) => (
             <div
               key={exp.title}
-              className={`relative mb-12 md:grid md:grid-cols-2 md:gap-12 ${i % 2 !== 0 ? "md:[direction:rtl]" : ""}`}
+              className="relative mb-12"
             >
               {/* Node */}
               <motion.div
@@ -79,14 +80,14 @@ export function Experience() {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, type: "spring" }}
-                className="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 z-10"
+                className="absolute left-4 top-6 -translate-x-1/2 z-10"
               >
                 <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${exp.color} flex items-center justify-center`}>
                   <exp.icon className="text-black" size={18} />
                 </div>
               </motion.div>
 
-              <div className={`ml-16 md:ml-0 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:col-start-2 md:pl-12 md:[direction:ltr]"}`}>
+              <div className="ml-12">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -96,15 +97,15 @@ export function Experience() {
                   className="glass rounded-2xl p-6 border-glow relative"
                 >
                   <h3 className="text-xl font-bold gradient-text inline-block mb-4">{exp.title}</h3>
-                  <ul className={`space-y-2 ${i % 2 === 0 ? "md:text-right" : ""}`}>
+                  <ul className="space-y-2">
                     {exp.bullets.map((b, bi) => (
                       <motion.li
                         key={bi}
-                        initial={{ opacity: 0, x: i % 2 === 0 ? 20 : -20 }}
+                        initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: bi * 0.06 }}
-                        className={`flex items-start gap-2 text-sm text-gray-300 ${i % 2 === 0 ? "md:flex-row-reverse md:text-right" : ""}`}
+                        className="flex items-start gap-2 text-sm text-gray-300"
                       >
                         <span className={`shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.color}`} />
                         <span>{b}</span>
@@ -115,6 +116,46 @@ export function Experience() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Desktop Horizontal Timeline */}
+        <div className="hidden md:block relative mt-8">
+          {/* Connecting line */}
+          <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-500/20 via-violet-500/20 to-pink-500/20 -translate-y-1/2 z-0" />
+          
+          <div className="grid grid-cols-4 gap-5 relative z-10">
+            {experiences.map((exp, i) => (
+              <motion.div
+                key={exp.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="glass rounded-2xl p-6 border-glow relative flex flex-col justify-between h-[360px]"
+              >
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${exp.color} flex items-center justify-center shrink-0`}>
+                      <exp.icon className="text-black" size={18} />
+                    </div>
+                    <h3 className="text-lg font-bold text-white leading-tight">{exp.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {exp.bullets.map((b, bi) => (
+                      <li key={bi} className="flex items-start gap-2 text-[13px] text-gray-300 leading-normal">
+                        <span className={`shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.color}`} />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="text-[10px] font-mono text-gray-500 uppercase tracking-widest text-right mt-4">
+                  0{i + 1} // Phase
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

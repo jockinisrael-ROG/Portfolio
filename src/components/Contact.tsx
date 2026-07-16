@@ -71,7 +71,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 px-6">
+    <section id="contact" className="relative py-24 md:py-2 px-6 w-full">
       <div className="max-w-5xl mx-auto">
         <SectionTitle tag="08 · Contact" title="Get In" accent="Touch" />
 

@@ -12,28 +12,38 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ activeSection }: { activeSection?: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
 
   useEffect(() => {
+    if (activeSection) {
+      setActive(activeSection);
+    }
+  }, [activeSection]);
+
+  useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
-      const sections = links.map(l => l.href.slice(1));
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const r = el.getBoundingClientRect();
-          if (r.top <= 120 && r.bottom >= 120) {
-            setActive(id);
-            break;
+      
+      // Only do manual tracking if activeSection is not passed (e.g. on mobile vertical layout)
+      if (!activeSection) {
+        const sections = links.map(l => l.href.slice(1));
+        for (const id of sections) {
+          const el = document.getElementById(id);
+          if (el) {
+            const r = el.getBoundingClientRect();
+            if (r.top <= 120 && r.bottom >= 120) {
+              setActive(id);
+              break;
+            }
           }
         }
       }
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [activeSection]);
 
   return (
     <motion.nav

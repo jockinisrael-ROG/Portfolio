@@ -488,16 +488,18 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <motion.div 
-          layout 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard key={project.num} project={project} index={index} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div className="md:max-h-[55vh] overflow-y-auto pr-2 scrollbar-none">
+          <motion.div 
+            layout 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pb-6"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project, index) => (
+                <ProjectCard key={project.num} project={project} index={index} />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
 
         {/* Empty state */}
         {filteredProjects.length === 0 && (
