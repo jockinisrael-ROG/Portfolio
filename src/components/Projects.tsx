@@ -432,7 +432,7 @@ export function Projects() {
   });
 
   return (
-    <section id="projects" className="relative py-24 px-6 overflow-hidden">
+    <section id="projects" className="relative py-24 md:py-0 px-6 overflow-hidden w-full">
       {/* Cyberpunk ambient glows */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl glow-spot" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl glow-spot" />

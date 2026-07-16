@@ -251,9 +251,9 @@ export default function App() {
                   <motion.div
                     key={idx}
                     style={{ x, opacity, scale }}
-                    className="absolute inset-0 w-full h-full flex items-center justify-center p-6 md:p-12 overflow-y-auto scrollbar-none"
+                    className="absolute inset-0 w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto scrollbar-none"
                   >
-                    <div className="w-full max-w-7xl mx-auto h-full flex flex-col justify-center py-16 md:py-20">
+                    <div className="w-full max-w-7xl mx-auto h-full flex flex-col justify-center py-8 md:py-10">
                       {component}
                     </div>
                   </motion.div>

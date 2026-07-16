@@ -44,12 +44,12 @@ export function Skills() {
   const row2 = allSkills.slice(half);
 
   return (
-    <section id="skills" className="relative py-24 px-6 overflow-hidden">
+    <section id="skills" className="relative py-24 md:py-0 px-6 overflow-hidden w-full">
       <div className="max-w-7xl mx-auto">
         <SectionTitle tag="02 · Skills" title="Tech" accent="Stack" />
 
         {/* Marquee */}
-        <div className="-mx-6 mb-16">
+        <div className="-mx-6 mb-8 md:mb-5">
           <Marquee items={row1} direction={1} />
           <Marquee items={row2} direction={-1} />
         </div>

@@ -10,7 +10,7 @@ const roles = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 px-6">
+    <section id="about" className="relative py-24 md:py-0 px-6 w-full">
       <div className="max-w-6xl mx-auto">
         <SectionTitle tag="01 · About Me" title="The Engineer" accent="Behind the Code" />
 

@@ -14,7 +14,7 @@ const stats = [
 
 export function Achievements() {
   return (
-    <section className="relative py-24 px-6">
+    <section className="relative py-24 md:py-0 px-6 w-full">
       <div className="max-w-6xl mx-auto">
         <SectionTitle tag="07 · Milestones" title="In" accent="Numbers" />
 

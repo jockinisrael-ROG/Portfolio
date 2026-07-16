@@ -44,7 +44,7 @@ function Heatmap() {
 
 export function GitHub() {
   return (
-    <section id="github" className="relative py-24 px-6">
+    <section id="github" className="relative py-24 md:py-0 px-6 w-full">
       <div className="max-w-7xl mx-auto">
         <SectionTitle tag="06 · GitHub" title="Open" accent="Source" />
 
